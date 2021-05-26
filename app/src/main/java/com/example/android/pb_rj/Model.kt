@@ -4,7 +4,17 @@ class Model {
 
     val counters = mutableListOf(0, 0, 0)
 
-    fun incremenetCounter(counterNo : Int) {
-        ++counters[counterNo]
+    fun getCurrent(index : Int) = counters[index]
+
+    fun next(index : Int) : Int {
+        counters[index]++
+        return getCurrent(index)
     }
+
+    fun set(index: Int, value : Int) {
+        counters[index] = value
+    }
+
+//    fun incremenetCounter(counterNo : Int) = ++counters[counterNo]
+
 }
