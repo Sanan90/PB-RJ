@@ -7,31 +7,19 @@ class Presenter( val view: MainView) {
 
     fun counterClick(id : Int) {
         when(id) {
-            R.id.button_one -> {
+            0 -> {
                 val nextValue = model.next(0)
                 view.setButtonText(0, nextValue.toString())
             }
-            R.id.button_two -> {
+            1 -> {
                 val nextValue = model.next(1)
                 view.setButtonText(1, nextValue.toString())
             }
-            R.id.button_three -> {
+            2 -> {
                 val nextValue = model.next(2)
                 view.setButtonText(2, nextValue.toString())
             }
         }
-
-
-
-
-
-//    fun incrementCounter(counterNo : Int) {
-
-//        counterNo
-//            .let (model::incremenetCounter)
-//            .let { counter -> view.showCounter(counterNo, counter) }
-//
-//        view.showCounter(counterNo, model.incremenetCounter(counterNo))
     }
 
 }

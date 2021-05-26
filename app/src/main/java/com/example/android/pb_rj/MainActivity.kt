@@ -21,7 +21,11 @@ class MainActivity : AppCompatActivity(), MainView {
         setContentView(vb?.root)
 
         val listener = View.OnClickListener {
-            presenter.counterClick(it.id)
+            when(it.id) {
+                vb?.buttonOne?.id -> presenter.counterClick(0)
+                vb?.buttonTwo?.id -> presenter.counterClick(1)
+                vb?.buttonThree?.id -> presenter.counterClick(2)
+            }
         }
 
         vb?.buttonOne?.setOnClickListener(listener)
@@ -36,40 +40,4 @@ class MainActivity : AppCompatActivity(), MainView {
             2 -> vb?.buttonThree?.text = text
         }
     }
-
-
-
-
-
-//    var vb : ActivityMainBinding? = null
-//    val presenter = Presenter(view = this,model = Model())
-//
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//
-//        vb = ActivityMainBinding.inflate(layoutInflater)
-//
-//        vb?.buttonOne?.setOnClickListener {
-//            presenter.incrementCounter(0)
-//        }
-//
-//        vb?.buttonTwo?.setOnClickListener {
-//            presenter.incrementCounter(1)
-//        }
-//
-//        vb?.buttonThree?.setOnClickListener {
-//            presenter.incrementCounter(2)
-//        }
-//
-//        setContentView(vb?.root)
-//
-//    }
-//
-//    override fun showCounter(counterNo : Int, counter : Int) {
-//        when (counterNo) {
-//            0 -> vb?.buttonOne?.text = "$counter"
-//            1 -> vb?.buttonTwo?.text = "$counter"
-//            2 -> vb?.buttonThree?.text = "$counter"
-//        }
-//    }
 }

@@ -11,6 +11,4 @@ interface MainView {
 
     fun setButtonText(index : Int, text : String)
 
-//    fun showCounter(counterNo : Int, counter : Int)
-
 }
